@@ -11,11 +11,6 @@ class ApproveUser {
       })
       .first();
 
-    // User
-    this.testMan = page.locator(
-      "(//p[normalize-space()='qadan@forliion.com'])[1]",
-    );
-
     // First Approve button
     this.approveButton = page
       .getByRole("button", {
@@ -43,12 +38,20 @@ class ApproveUser {
     });
   }
 
-  async approve() {
+  async approve(email) {
+    // Remove timestamp from the email
+    const emailPrefix = email.split("@")[0].replace(/\d+$/, "");
+
+    // User
+    this.testMan = this.page.locator(
+      `(//p[starts-with(normalize-space(), '${emailPrefix}')])[1]`,
+    );
+
     // 1. Click Review Applications
     await this.reviewApplications.click();
 
     // 2. Wait for TEST MAN to appear
-    await expect(this.testMan.first()).toBeVisible();
+    await expect(this.testMan).toBeVisible();
 
     // 3. Click the first Approve button
     await this.approveButton.click();

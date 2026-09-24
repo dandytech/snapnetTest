@@ -2,7 +2,7 @@ const { test } = require("../utils/test-base");
 
 const { POManager } = require("../pageobjects/POManager");
 
-test("Admin Reject User", async ({ page, loginData }) => {
+test("Admin Reject User", async ({ page, loginData, registerData }) => {
   const poManager = new POManager(page);
 
   // Login
@@ -13,5 +13,5 @@ test("Admin Reject User", async ({ page, loginData }) => {
   // Reject User
   const rejectUser = poManager.getRejectUser();
 
-  await rejectUser.reject();
+  await rejectUser.reject(registerData.email);
 });

@@ -11,12 +11,7 @@ class RejectUser {
       })
       .first();
 
-    // User
-    this.testMan = page.locator(
-      "(//p[normalize-space()='qadan@forliion.com'])[1]",
-    );
-
-    // First Approve button
+    // First Reject button
     this.rejectButton = page
       .getByRole("button", {
         name: "Reject",
@@ -24,7 +19,7 @@ class RejectUser {
       })
       .first();
 
-    // Approval reason textarea
+    // Rejection reason textarea
     this.rejectionReason = page.locator(
       'textarea[placeholder="Provide a detailed reason for rejection..."]',
     );
@@ -37,34 +32,42 @@ class RejectUser {
       })
       .first();
 
-    // Approval confirmation
+    // Rejection confirmation
     this.applicationRejected = page.getByText("Application Rejected", {
       exact: true,
     });
   }
 
-  async reject() {
+  async reject(email) {
+    // Remove timestamp from the email
+    const emailPrefix = email.split("@")[0].replace(/\d+$/, "");
+
+    // User
+    this.testMan = this.page.locator(
+      `(//p[starts-with(normalize-space(), '${emailPrefix}')])[1]`,
+    );
+
     // 1. Click Review Applications
     await this.reviewApplications.click();
 
     // 2. Wait for TEST MAN to appear
-    await expect(this.testMan.first()).toBeVisible();
+    await expect(this.testMan).toBeVisible();
 
-    // 3. Click the first Approve button
+    // 3. Click the first Reject button
     await this.rejectButton.click();
 
-    // 4. Wait for approval dialog
+    // 4. Wait for rejection dialog
     await expect(this.rejectionReason).toBeVisible();
 
-    // 5. Enter approval reason
+    // 5. Enter rejection reason
     await this.rejectionReason.fill(
       "Sorry, your application has been reviewed and rejected.",
     );
 
-    // 6. Click final Approve Application button
+    // 6. Click final Reject Application button
     await this.rejectApplication.click();
 
-    // 7. Confirm that the application was approved
+    // 7. Confirm that the application was rejected
     await expect(this.applicationRejected).toBeVisible();
   }
 }
