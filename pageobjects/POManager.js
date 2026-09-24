@@ -1,32 +1,36 @@
-const { CheckOut } = require("./CheckOut");
-const { DashboardPage } = require("./DashboardPage");
+const { ApproveUser } = require("./Approve-user");
 const { LoginPage } = require("./LoginPage");
-const { ThankyouPage } = require("./ThankyouPage");
+const { Register } = require("./Register");
+const { RejectUser } = require("./Reject-User");
 
 class POManager {
   constructor(page) {
-    this.page = page; //give live to the variables
+    this.page = page;
+
     this.loginPage = new LoginPage(this.page);
-    this.dashboardPage = new DashboardPage(this.page);
-    this.checkout = new CheckOut(this.page);
-    this.thankyouPage = new ThankyouPage(this.page);
+
+    this.approveUser = new ApproveUser(this.page);
+
+    this.rejectUser = new RejectUser(this.page);
+
+    this.registerUser = new Register(this.page);
   }
 
-  //create custom methods for each page object class
+  // Create custom methods for each page object class
   getLoginPage() {
     return this.loginPage;
   }
 
-  getDashboardPage() {
-    return this.dashboardPage;
+  getApproveUser() {
+    return this.approveUser;
   }
 
-  getCheckOut() {
-    return this.checkout;
+  getRejectUser() {
+    return this.rejectUser;
   }
 
-  getThankyouPage() {
-    return this.thankyouPage;
+  getRegister() {
+    return this.registerUser;
   }
 }
 

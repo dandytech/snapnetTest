@@ -2,11 +2,11 @@
   "cookies": [],
   "origins": [
     {
-      "origin": "https://rahulshettyacademy.com",
+      "origin": "https://partner.snapnetsolutions.com/admin/signin",
       "localStorage": [
         {
           "name": "token",
-          "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUyMDNiMGE4NmY4Zjc0ZGNlZmUyYWMiLCJ1c2VyRW1haWwiOiJkYW5keUBmbG9vZG91dHMuY29tIiwidXNlck1vYmlsZSI6MzQ1Njc4OTc2NSwidXNlclJvbGUiOiJjdXN0b21lciIsImlhdCI6MTcxODU0MzQzMSwiZXhwIjoxNzUwMTAxMDMxfQ.J9-e9DNO96SFPRUzCJs7dO3lpZtXVYV7DJX-OINjdUI"
+          "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUyMDNiMGE4NmY4Zjc0ZGNlZmUyYWMiLCJ1c2VyRW1haWwiOiJkYW5keUBmbG9vZG91dHMuY29tIiwidXNlck1vYmlsZSI6MzQ1Njc4OTc2NSwidXNlclJvbGUiOiJjdXN0b21lciIsImlhdCI6MTcyMDcwNjMzNCwiZXhwIjoxNzUyMjYzOTM0fQ.h5uea6G6stHkPpnmWZzS8udun0nrEx10bVZ_V1F8wbQ"
         }
       ]
     }

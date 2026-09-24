@@ -17,8 +17,11 @@ module.exports = defineConfig({
   use: {
     browserName: "firefox", //webkit’ for safari, ‘chromium’ for chrome
     headless: true, //to open browser when executing
-    screenshot: "on", //take screenshot for every step in test
+    //screenshot: "on", //take screenshot for every step in test
     //trace: "on", //collect log of every test passed or failed
     trace: "retain-on-failure", //capture log only when test fail
+
+    video: "retain-on-failure",
+    screenshot: "only-on-failure",
   },
 });
