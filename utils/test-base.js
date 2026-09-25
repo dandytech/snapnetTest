@@ -10,11 +10,11 @@ exports.test = base.test.extend({
     const timestamp = Date.now();
 
     const registerData = {
-      firstName: "John",
-      lastName: "Doe",
+      firstName: "Daniel",
+      lastName: "Tester",
       companyName: "Your Company Inc.",
-      email: `john${timestamp}@example.com`,
-      phone: "+1 (555) 123-4567",
+      email: `dannkow${timestamp}@gmail.com`,
+      phone: "+2347065123746",
     };
 
     await use(registerData);

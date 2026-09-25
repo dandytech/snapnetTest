@@ -16,7 +16,7 @@ class Register {
 
     this.companyNameInput = page.getByPlaceholder("Your Company Inc.");
 
-    this.emailInput = page.getByPlaceholder("daniel@example.com");
+    this.emailInput = page.getByPlaceholder("john@example.com");
 
     this.phoneInput = page.getByPlaceholder("+1 (555) 123-4567");
 
